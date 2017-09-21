@@ -1,0 +1,33 @@
+{
+  "name": "protractor-history",
+  "version": "0.0.1",
+  "description": "creates a JSON history instance.",
+  "scripts": {
+    "update-webdriver": "webdriver-manager update",
+    "postinstall": "webdriver-manager update",
+    "instGlobal": "npm install -g protractor",
+    "pretest": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1greenapplee/protractor-history"
+  },
+  "keywords": [
+    "protractor",
+    "history-plugin",
+    "history"
+  ],
+  "author": "Fabian Clain <fabian.clain@gmail.com> (http://thisqa.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1greenapplee/protractor-history/issues"
+  },
+  "homepage": "https://github.com/1greenapplee/protractor-history",
+  "devDependencies": {
+    "express": "^4.15.4",
+    "jasmine-json-test-reporter": "*"    
+  },
+  "engines": {
+    "node": ">= 0.10.33"
+  }
+}
