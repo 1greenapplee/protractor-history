@@ -25,6 +25,7 @@
   "homepage": "https://github.com/1greenapplee/protractor-history",
   "devDependencies": {
     "express": "^4.15.4",
+    "fs": "*",
     "jasmine-json-test-reporter": "*"    
   },
   "engines": {
