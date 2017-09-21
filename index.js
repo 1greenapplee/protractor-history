@@ -15,13 +15,22 @@ let fs = require('fs');
 //         }));
 //     })();
 // };
+let dbFILE = '../myDataBase.json';
 module.exports = function () {
-    return (function(){
-        function callback1(){
+
+    return (function () {
+        function callback1() {
             console.log('there, callback');
         }
-        let configFile = fs.readFileSync('../myDataBase.json'); // add .toString() ?
+        // fs.closeSync(fs.openSync(dbFILE, 'a'))
+
+        // if (fs.lstatSync(dbFILE).isFile()) {
+        //     return;
+        // }
+        let configFile = fs.readFileSync(dbFILE); // add .toString() ?
         let config = JSON.parse(configFile);
+
+
         console.log('here!');
 
         let dbconfigFile = fs.readFileSync('../jasmine-test-results.json'); // add .toString() ?
@@ -36,7 +45,7 @@ module.exports = function () {
 
         const dbconfigProps = Object.keys(dbconfig);
 
-        dbconfigProps.forEach(function(property) {
+        dbconfigProps.forEach(function (property) {
             const test = dbconfig[property];
             rulare.tests.push(test);
         });
@@ -48,7 +57,7 @@ module.exports = function () {
             flags: 'a'
         };
 
-        fs.writeFile('../myDataBase.json', newconfigfile, options,callback1()); // for angular
+        fs.writeFile('../myDataBase.json', newconfigfile, options, callback1()); // for angular
         // fs.writeFile('../app-react/src/myDataBase.json', newconfigfile, options); // for react
     })();
 };
